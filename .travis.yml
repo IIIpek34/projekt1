@@ -1,5 +1,5 @@
 language: node_js
-install:
-  - make install
-
-script: make lint
+node_js:
+  - node
+script:
+  - make lint
