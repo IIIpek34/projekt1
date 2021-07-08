@@ -4,7 +4,6 @@ import { howToPlay, questionGames } from './brain-even';
 
 let name = '';
 export const greeting = () => {
-  /* eslint-disable no-console */
   console.log('Welcome to the Brain Games!');
   console.log(howToPlay);
   name = haveName();
@@ -12,20 +11,22 @@ export const greeting = () => {
 };
 
 export const games = () => {
-  for (let i = 0; i < 3; i += 1) {
-    /* eslint-disable no-console */
-    console.log(`Question: ${questionGames[0 + i][0]}`);
-    const answer = haveAnswer();
-    if (answer === questionGames[0 + i][1]) {
+  let progressGames = 0;
+  /* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
+  for (const values of questionGames) {
+    const [quest, answerEqual] = values;
+    console.log(`Question: ${quest}`);
+    const answerUser = haveAnswer();
+    if (answerUser === answerEqual) {
       console.log('Correct!');
-      if (i === 2) {
+      progressGames += 1;
+      if (progressGames === questionGames.length) {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${questionGames[0 + i][1]}'`);
+      console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answerEqual}'`);
       console.log(`Let\'s try again, ${name}!`);
       break;
     }
   }
 };
-console.log('работай');
