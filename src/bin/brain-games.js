@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { haveName, haveAnswer } from '../index';
 
 let name = '';
