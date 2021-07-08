@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
+    "brain-calc": "./dist/bin/brain-calc.js",
     "brain-even": "./dist/bin/brain-even.js"
   },
   "main": "index.js",

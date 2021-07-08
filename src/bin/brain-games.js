@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { haveName, haveAnswer } from '../index';
 import { howToPlay, questionGames } from './brain-even';
+import { howToPlay, questionGames } from './brain-calc';
 
 let name = '';
 export const greeting = () => {
@@ -14,10 +15,10 @@ export const games = () => {
   let progressGames = 0;
   /* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
   for (const values of questionGames) {
-    const [quest, answerEqual] = values;
+    const [quest, answerСorrect] = values;
     console.log(`Question: ${quest}`);
     const answerUser = haveAnswer();
-    if (answerUser === answerEqual) {
+    if (answerUser === answerСorrect) {
       console.log('Correct!');
       progressGames += 1;
       if (progressGames === questionGames.length) {
