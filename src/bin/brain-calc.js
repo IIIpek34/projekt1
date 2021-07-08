@@ -34,14 +34,14 @@ const generationQuest = () => {
     const operand2 = randomNum();
     const action = randomOperation();
     const question = `${operand1} ${action} ${operand2}`;
-    const answerCorrect = countAnswerCorrect(operand1, operand2, action);
+    const answerCorrect = String(countAnswerCorrect(operand1, operand2, action));
     arrQuest.push([question, answerCorrect]);
   }
   return arrQuest;
 };
 
-export const howToPlay = 'What is the result of the expression';
-export const questions = generationQuest();
+const howToPlay = 'What is the result of the expression';
+const questions = generationQuest();
 
-greeting();
-games();
+greeting(howToPlay);
+games(questions);
