@@ -24,7 +24,7 @@ export const games = (array) => {
       }
     } else {
       console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answerСorrect}'`);
-      console.log(`Let\'s try again, ${name}!`);
+      console.log(`Let's try again, ${name}!`);
       break;
     }
   }

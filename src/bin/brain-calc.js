@@ -1,29 +1,16 @@
 #!/usr/bin/env node
-import { greeting, games } from './brain-games.js';
+import { greeting, games } from './brain-games';
+import { randomNum, randomOperation } from '../utils';
 
-const randomNum = () => {
-  const min = 1;
-  const max = 50;
-  const num = Math.floor(Math.random() * (max - min + 1)) + min;
-  return num;
-};
-
-const randomOperation = () => {
-  const arr = ['+', '-', '*'];
-  const operation = Math.floor(Math.random() * arr.length);
-  return arr[operation];
-};
-
+/* eslint consistent-return: ["off", "ForOfStatement"] */
 const countAnswerCorrect = (num1, num2, operation) => {
-  let answerCorrect = 0;
   if (operation === '+') {
-    answerCorrect = num1 + num2;
-  } else if (operation === '-') {
-    answerCorrect = num1 - num2;
-  } else if (operation === '*') {
-    answerCorrect = num1 * num2;
+    return num1 + num2;
+  } if (operation === '-') {
+    return num1 - num2;
+  } if (operation === '*') {
+    return num1 * num2;
   }
-  return answerCorrect;
 };
 
 let quantityQuest = 3;
