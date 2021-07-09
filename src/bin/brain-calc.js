@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { greeting, games } from './brain-games';
-import { randomNum, randomOperation } from '../utils';
+import { randomNum, randomElementArray } from '../utils';
 
 /* eslint consistent-return: ["off", "ForOfStatement"] */
 const countAnswerCorrect = (num1, num2, operation) => {
@@ -13,13 +13,14 @@ const countAnswerCorrect = (num1, num2, operation) => {
   }
 };
 
+const arr = ['+', '-', '*'];
 let quantityQuest = 3;
 const generationQuest = () => {
   const arrQuest = [];
   for (; quantityQuest > 0; quantityQuest -= 1) {
     const operand1 = randomNum();
     const operand2 = randomNum();
-    const action = randomOperation();
+    const action = randomElementArray(arr);
     const question = `${operand1} ${action} ${operand2}`;
     const answerCorrect = String(countAnswerCorrect(operand1, operand2, action));
     arrQuest.push([question, answerCorrect]);

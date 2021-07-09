@@ -1,6 +1,8 @@
 # Makefile
 install: # установка зависимостей
 	npm install
+startProgression:
+	npx babel-node src/bin/brain-progression.js
 startGcd:
 	npx babel-node src/bin/brain-gcd.js
 startCalc:
