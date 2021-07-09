@@ -1,6 +1,8 @@
 # Makefile
 install: # установка зависимостей
 	npm install
+startPrime:
+	npx babel-node src/bin/brain-prime.js
 startProgression:
 	npx babel-node src/bin/brain-progression.js
 startGcd:

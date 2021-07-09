@@ -17,10 +17,9 @@ const countAnswerCorrect = (num1, num2) => {
   }
 };
 
-let quantityQuest = 3;
 const generationQuest = () => {
   const arrQuest = [];
-  for (; quantityQuest > 0; quantityQuest -= 1) {
+  for (let quantityQuest = 3; quantityQuest > 0; quantityQuest -= 1) {
     const operand1 = randomNum();
     const operand2 = randomNum();
     const question = `${operand1} ${operand2}`;
