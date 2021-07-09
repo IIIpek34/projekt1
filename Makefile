@@ -1,6 +1,8 @@
 # Makefile
 install: # установка зависимостей
 	npm install
+startGcd:
+	npx babel-node src/bin/brain-gcd.js
 startCalc:
 	npx babel-node src/bin/brain-calc.js
 startEven:
