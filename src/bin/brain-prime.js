@@ -2,12 +2,12 @@ import { greeting, games } from './brain-games';
 import { randomNum } from '../utils';
 
 const checkNumber = (num) => {
-  let quantityDivider = 0;
-  for (let quantityCheck = num; quantityCheck > 0; quantityCheck -= 1) {
-    if (quantityDivider > 2) {
+  if (num === 1) {
+    return 'no';
+  }
+  for (let quantityCheck = num - 1; quantityCheck > 1; quantityCheck -= 1) {
+    if (num % num === 0 && num % 1 === 0 && num % quantityCheck === 0) {
       return 'no';
-    } if (num % quantityCheck === 0) {
-      quantityDivider += 1;
     }
   }
   return 'yes';
