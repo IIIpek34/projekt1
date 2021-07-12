@@ -3,13 +3,9 @@ import { greeting, games } from './brain-games';
 import { randomNum } from '../utils';
 
 /* eslint consistent-return: ["off", "ForOfStatement"] */
+/* eslint no-use-before-define: ["off", "ForOfStatement"] */
 const countAnswerCorrect = (num1, num2) => {
-  let found = 0;
-  if (num1 < num2) {
-    found = num1;
-  } else {
-    found = num2;
-  }
+  let found = num1 < num2 ? found = num1 : found = num2;
   for (; found >= 1; found -= 1) {
     if ((num1 % found === 0) && (num2 % found === 0)) {
       return found;

@@ -13,13 +13,13 @@ const countAnswerCorrect = (num1, num2, operation) => {
   }
 };
 
-const arr = ['+', '-', '*'];
 const generationQuest = () => {
+  const arrayActions = ['+', '-', '*'];
   const arrQuest = [];
   for (let quantityQuest = 3; quantityQuest > 0; quantityQuest -= 1) {
     const operand1 = randomNum();
     const operand2 = randomNum();
-    const action = randomElementArray(arr);
+    const action = randomElementArray(arrayActions);
     const question = `${operand1} ${action} ${operand2}`;
     const answerCorrect = String(countAnswerCorrect(operand1, operand2, action));
     arrQuest.push([question, answerCorrect]);
