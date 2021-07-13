@@ -6,7 +6,7 @@ const assemProgression = () => {
   const stepProgression = randomNum(1, 3);
   let nextElement = startProgression + stepProgression;
   const progression = [startProgression];
-  for (let longProgression = 1; longProgression < 10; longProgression += 1) {
+  for (let longProgression = 10; longProgression > 1; longProgression -= 1) {
     progression.push(nextElement);
     nextElement += stepProgression;
   }

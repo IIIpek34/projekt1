@@ -2,14 +2,14 @@
 import { greeting, games } from './brain-games';
 import { randomNum } from '../utils';
 
-/* eslint consistent-return: ["off", "ForOfStatement"] */
 const countAnswerCorrect = (num1, num2) => {
-  const greatest = Math.max(num1, num2);
-  for (let found = greatest; found >= 1; found -= 1) {
+  let found = Math.max(num1, num2);
+  for (found; found >= 1; found -= 1) {
     if ((num1 % found === 0) && (num2 % found === 0)) {
-      return found;
+      break;
     }
   }
+  return found;
 };
 
 const generationQuest = () => {
