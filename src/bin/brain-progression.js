@@ -5,14 +5,10 @@ const assemProgression = () => {
   const startProgression = randomNum();
   const stepProgression = randomNum(1, 3);
   let nextElement = startProgression + stepProgression;
-  const progression = [];
-  for (let longProgression = 10; longProgression > 0; longProgression -= 1) {
-    if (progression.length === 0) {
-      progression.push(startProgression);
-    } else {
-      progression.push(nextElement);
-      nextElement += stepProgression;
-    }
+  const progression = [startProgression];
+  for (let longProgression = 1; longProgression < 10; longProgression += 1) {
+    progression.push(nextElement);
+    nextElement += stepProgression;
   }
   return progression;
 };

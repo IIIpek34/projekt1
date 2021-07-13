@@ -2,12 +2,8 @@
 import { greeting, games } from './brain-games';
 import { randomNum } from '../utils';
 
-const checkParity = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
+/* eslint no-confusing-arrow: ["off", "ForOfStatement"] */
+const checkParity = (num) => num % 2 === 0 ? 'yes' : 'no';
 
 const generationQuest = () => {
   const arrQuest = [];
